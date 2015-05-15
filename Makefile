@@ -2,7 +2,7 @@
 DESTDIR :=
 
 all:
-	@echo "Nothing to build! Try make install"
+	$(MAKE) -C src/ext4sz/
 
 test:
 	$(MAKE) -C tests test
@@ -11,6 +11,7 @@ test-root:
 	$(MAKE) -C tests test-root
 
 install:
+	$(MAKE) -C src/ext4sz/ install
 	install -m 755 -d \
 		$(DESTDIR)/lib/udev/rules.d \
 		$(DESTDIR)/usr/bin \
